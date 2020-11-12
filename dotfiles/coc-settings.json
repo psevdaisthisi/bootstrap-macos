@@ -1,4 +1,5 @@
 {
+	"clangd.path": "/usr/local/opt/llvm/bin/clangd",
 	"coc.preferences.extensionUpdateCheck": "never",
-	"clangd.path": "/usr/local/opt/llvm/bin/clangd"
+	"javascript.suggestionActions.enabled": false
 }

@@ -13,6 +13,11 @@ defaults write -g KeyRepeat -int 1 ||
 { printerr "Updating keyboard key repeat rate... FAILED"; exit 1; }
 
 
+printinfo "Disabling Gatekeeper..."
+sudo spctl --master-disable ||
+{ printerr "Disabling Gatekeeper... [FAILED]"; exit 1; }
+
+
 printinfo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &&
 /usr/local/bin/brew doctor ||
@@ -35,7 +40,8 @@ printinfo "Installing PIP packages..."
 
 
 printinfo "Installing Neovim plugins..."
-/usr/local/bin/nvim +PlugInstall +qa ||
+/usr/local/bin/nvim +PlugInstall +qa &&
+/usr/local/bin/nvim +CocUpdateSync +qa ||
 { printinfo "Installing Neovim plugins... [FAILED]"; exit 1; }
 
 printinfo "Installing SF Mono Powerline font..."

@@ -107,23 +107,11 @@ if has('unix') || has('mac')
 endif
 
 " Highlighting
-Plug 'peterrincker/vim-searchlight'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'justinmk/vim-syntax-extra'
-Plug 'dag/vim-fish'
-Plug 'elzr/vim-json'
 let g:vim_json_syntax_conceal = 0
-Plug 'pangloss/vim-javascript'
-Plug 'posva/vim-vue'
-Plug 'godlygeek/tabular' " required for vim-markdown
-Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
-Plug 'fatih/vim-go'
-Plug 'leafgarland/typescript-vim'
-Plug 'ziglang/zig.vim'
-if has('mac')
-	Plug 'kovetskiy/vim-bash'
-endif
+Plug 'godlygeek/tabular' " required for vim-markdown
+Plug 'peterrincker/vim-searchlight'
+Plug 'sheerun/vim-polyglot'
 
 " Code completion and navigation
 let g:coc_global_extensions = [ 'coc-calc', 'coc-clangd', 'coc-cmake', 'coc-css',
@@ -139,11 +127,7 @@ let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 Plug 'ryanoasis/vim-devicons'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-
-if has('win32')
-	Plug 'gruvbox-community/gruvbox', { 'tag': 'v2.1.0' }
-endif
+Plug 'mg979/vim-visual-multi', { 'branch': 'master' }
 
 call plug#end()
 " }}} Plugins setup
@@ -188,6 +172,8 @@ set sidescroll=1
 set smartcase
 set splitbelow
 set splitright
+set title
+autocmd BufEnter * let &titlestring=expand('%:t')
 
 if has('unix') && exists('g:GuiLoaded')
 	colorscheme slate
@@ -212,7 +198,7 @@ hi CursorLineNR cterm=reverse
 hi Error ctermfg=black ctermbg=red
 hi ErrorMsg ctermfg=black ctermbg=red
 hi Folded ctermfg=none ctermbg=darkgrey
-hi Pmenu ctermfg=lightgrey ctermbg=darkgrey
+hi Pmenu ctermfg=lightgrey ctermbg=238
 hi PmenuSel ctermfg=black ctermbg=yellow
 hi PmenuSBar ctermfg=lightgrey ctermbg=darkgray
 hi PmenuThumb ctermfg=none ctermbg=lightgrey
@@ -279,6 +265,10 @@ inoremap <silent><expr> <Tab>
 	\ pumvisible() ? "\<C-n>" :
 	\ <SID>check_back_space() ? "\<Tab>" :
 	\ coc#refresh()
+inoremap <silent><expr> <S-Tab>
+	\ pumvisible() ? "\<C-p>" :
+	\ <SID>check_back_space() ? "\<Tab>" :
+	\ coc#refresh()
 
 " Tabs-related mappings
 nnoremap th :tabfirst<CR>
@@ -321,7 +311,7 @@ nnoremap # :keepjumps normal! msHmt`s#`tzt`s<CR>
 nnoremap <A-f> :%s/
 inoremap <A-f> <ESC>:%s/
 
-" Visualisation-related mappings
+" Visual-related mappings
 nnoremap <Leader>vn1 :set number<CR>
 nnoremap <Leader>vl1 :set list<CR>
 nnoremap <Leader>vc1 :set colorcolumn=101<CR>
