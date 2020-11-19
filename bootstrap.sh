@@ -26,7 +26,7 @@ printinfo "Installing Homebrew..."
 
 printinfo "Installing Homebrew packages..."
 _pkgs_tools=(aria2 bat bash bash-completion@2 coreutils dash entr exa fd ffmpeg
-             fish fzf gnupg gocryptfs ipfs moreutils neovim ninja nmap nnn p7zip
+             fish fzf gnupg gocryptfs hey ipfs moreutils neovim ninja nmap nnn p7zip
              progress qemu ripgrep tmux tree youtube-dl zstd)
 _pkgs_dev=(cmake gcc gcc@8 gcc@9 git git-delta go grip llvm ninja node@12
            pkg-config python tig)
