@@ -40,13 +40,13 @@ if [[ $- == *i* ]]; then
 fi
 
 export CLICOLOR=1
-export CODE="$HOME/Code"
 export EDITOR="nvim"
 export GOBIN="$HOME/.local/bin/go"
 export GOCACHE="$HOME/.cache/go/build"
 export GOMODCACHE="$HOME/.cache/go/mod"
 export GOPATH="$HOME/.cache/go/lib"
 export IPFS_PATH="$HOME/.cache/ipfs"
+export JUNK="$HOME/Junk"
 export HISTSIZE=32768
 export HISTFILESIZE=32768
 export HISTCONTROL=ignoreboth:ereasedups
@@ -54,6 +54,7 @@ export HISTIGNORE="?:??:???:????:?????"
 export HISTTIMEFORMAT="%F %T "
 export LESSCHARSET=UTF-8
 export MOUNT="$HOME/Mount"
+export PROJECTS="$HOME/Projects"
 export SYNC="$HOME/Sync"
 [[ ! "$PATH" =~ /usr/local/sbin ]] && export PATH="$PATH:/usr/local/sbin"
 [[ ! "$PATH" =~ /usr/local/opt/node@12/bin ]] && export PATH="$PATH:/usr/local/opt/node@12/bin"

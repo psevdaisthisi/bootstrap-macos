@@ -78,7 +78,6 @@ end
 
 fish_vi_key_bindings
 
-set --export CODE "$HOME/Code"
 set --export EDITOR nvim
 set --export LESSCHARSET UTF-8
 set --export GOBIN "$HOME/.local/bin/go"
@@ -86,7 +85,9 @@ set --export GOCACHE "$HOME/.cache/go/build"
 set --export GOMODCACHE "$HOME/.cache/go/mod"
 set --export GOPATH "$HOME/.cache/go/lib"
 set --export IPFS_PATH "$HOME/.cache/ipfs"
+set --export JUNK "$HOME/Junk"
 set --export MOUNT "$HOME/Mount"
+set --export PROJECTS "$HOME/Projects"
 set --export SYNC "$HOME/Sync"
 set --append PATH /usr/local/sbin
 set --append PATH /usr/local/opt/fzf/bin
