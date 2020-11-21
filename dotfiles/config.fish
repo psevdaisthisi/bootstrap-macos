@@ -185,7 +185,7 @@ function decgpg --description "Decrypt given file into a nvim buffer"
 	gpg -d "$argv[1]" | nvim -i NONE -n -;
 end
 
-set --export NNN_BMS 'd:~/Downloads;j:~/Junk;p:~/Project;s:~/Sync;v:/Volumes'
+set --export NNN_BMS 'd:~/Downloads;j:~/Junk;p:~/Projects;s:~/Sync;v:/Volumes'
 set --export NNN_PLUG 'a:archive;d:fzcd;e:_nvim $nnn*;f:-fzopen;k:-pskill'
 function e --description "Starts nnn in the current directory"
 	nnn -x $argv

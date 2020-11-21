@@ -278,7 +278,7 @@ export GPG_TTY=$(tty)
 function encgpg { gpg -c -o "$1"; }
 function decgpg { gpg -d "$1" | nvim -i NONE -n -; }
 
-export NNN_BMS='d:~/Downloads;j:~/Junk;p:~/Project;s:~/Sync;v:/Volumes'
+export NNN_BMS='d:~/Downloads;j:~/Junk;p:~/Projects;s:~/Sync;v:/Volumes'
 export NNN_PLUG='a:archive;d:fzcd;e:_nvim $nnn*;f:-fzopen;k:-pskill'
 e () {
 	nnn -x "$@"
