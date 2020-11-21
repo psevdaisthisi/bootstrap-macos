@@ -25,11 +25,11 @@ set -g fish_color_error brred --bold
 set -U ENABLE_GIT_PROMPT 1
 function fish_prompt
 	if test "$ENABLE_GIT_PROMPT" = 1
-		printf '%s %s %s%s%s%s%s ➤  ' (set_color $fish_color_cwd) (prompt_pwd) \
+		printf '%s %s %s%s%s%s%s ➤ ' (set_color $fish_color_cwd) (prompt_pwd) \
 			(set_color $fish_color_nnn) ([ -n "$NNNLVL" ] && echo " $NNNLVL ") (set_color $fish_color_normal) \
 			(set_color $fish_color_normal) (__fish_git_prompt || echo ' ')
 	else
-		printf '%s %s %s%s%s ➤  ' (set_color $fish_color_cwd) (prompt_pwd) \
+		printf '%s %s %s%s%s ➤ ' (set_color $fish_color_cwd) (prompt_pwd) \
 			(set_color $fish_color_nnn) ([ -n "$NNNLVL" ] && echo " $NNNLVL ") (set_color $fish_color_normal)
 	end
 end
@@ -185,7 +185,7 @@ function decgpg --description "Decrypt given file into a nvim buffer"
 	gpg -d "$argv[1]" | nvim -i NONE -n -;
 end
 
-set --export NNN_BMS 'c:~/Code;d:~/Downloads;j:~/Junk;s:~/Sync;v:/Volumes'
+set --export NNN_BMS 'd:~/Downloads;j:~/Junk;p:~/Project;s:~/Sync;v:/Volumes'
 set --export NNN_PLUG 'a:archive;d:fzcd;e:_nvim $nnn*;f:-fzopen;k:-pskill'
 function e --description "Starts nnn in the current directory"
 	nnn -x $argv
