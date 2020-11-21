@@ -43,4 +43,7 @@ cp nnn/* "${XDG_CONFIG_HOME}/nnn/plugins/"
 chmod u+x "${XDG_CONFIG_HOME}/nnn/plugins/"*
 cd "${_scriptdir}"
 
+. ~/.bash_profile
+mkdir -p "$JUNK" "$MOUNT" "$PROJECTS" "$SYNC"
+
 popd > /dev/null
