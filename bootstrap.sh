@@ -20,7 +20,8 @@ sudo spctl --master-disable ||
 
 printinfo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &&
-/usr/local/bin/brew doctor ||
+/usr/local/bin/brew doctor &&
+/usr/local/bin/brew tap mongodb/brew ||
 { printerr "Installing Homebrew... [FAILED]"; exit 1; }
 
 
@@ -28,8 +29,9 @@ printinfo "Installing Homebrew packages..."
 _pkgs_tools=(aria2 bat bash bash-completion@2 coreutils dash entr exa fd ffmpeg
              fish fzf gnupg gocryptfs hey ipfs moreutils neovim ninja nmap nnn p7zip
              progress qemu ripgrep tmux tree youtube-dl zstd)
-_pkgs_dev=(cmake gcc gcc@8 gcc@9 git git-delta go grip llvm ninja node@12
-           pkg-config python tig)
+_pkgs_dev=(cmake gcc gcc@8 gcc@9 git git-delta go grip llvm
+           mongodb/brew/mongodb-database-tools mongodb/brew/mongodb-community
+           ninja node@12 pkg-config python tig)
 /usr/local/bin/brew install ${_pkgs_tools[*]} ${_pkgs_dev[*]} ||
 { printerr "Installing Homebrew packages... [FAILED]"; exit 1; }
 

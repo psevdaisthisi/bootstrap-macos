@@ -116,7 +116,7 @@ alias q="exit"
 alias tar="env COPYFILE_DISABLE=1 tar"
 
 
-function clear-shada --description "Clear neovim persistent history"
+function clear-nvim --description "Clear neovim persistent history"
 	rm -f ~/.local/share/nvim/shada/*.shada
 end
 

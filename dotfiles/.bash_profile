@@ -81,7 +81,7 @@ alias nn="nvim -Zn -u NONE -i NONE"
 alias q="exit"
 alias tar="COPYFILE_DISABLE=1 tar"
 
-clear-shada () {
+clear-nvim () {
 	rm -f ~/.local/share/nvim/shada/*.shada
 }
 
